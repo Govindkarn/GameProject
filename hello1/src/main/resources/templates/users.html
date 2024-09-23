@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - Tic Tac Toe</title>
+    <link rel="stylesheet" href="newstyle.css">
+</head>
+<body>
+    <div class="user-management-container">
+        <h1>User Management</h1>
+        <a href="signup.html" class="btn add-user-btn">Add User</a> <!-- Redirects to signup.html -->
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Displaying user details -->
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.id}"></td>
+                    <td th:text="${user.uname}"></td>
+                    <td th:text="${user.pwd}"></td> <!-- Display password -->
+                    <td>
+                        <!-- Edit Button -->
+                        <a th:href="@{/users/edit/{id}(id=${user.id})}" class="btn edit-btn">Edit</a>
+                        <!-- Delete Button with confirmation -->
+                        <a th:href="@{/users/delete/{id}(id=${user.id})}" class="btn delete-btn" 
+                           onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+                    </td>
+                </tr>
+                <!-- Show 'No users found' if the list is empty -->
+                <tr th:if="${#lists.isEmpty(users)}">
+                    <td colspan="4">No users found.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

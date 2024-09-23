@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="game-container">
+            <div class="game-board">
+                <h1>Tic Tac Toe</h1>
+                <div class="mode-selection">
+                    <button id="aiMode">Play vs AI</button>
+                    <button id="multiplayerMode">Multiplayer</button>
+                </div>
+                <div class="board">
+                    <!-- Grid cells for the Tic Tac Toe game -->
+                    <div class="cell" data-index="0"></div>
+                    <div class="cell" data-index="1"></div>
+                    <div class="cell" data-index="2"></div>
+                    <div class="cell" data-index="3"></div>
+                    <div class="cell" data-index="4"></div>
+                    <div class="cell" data-index="5"></div>
+                    <div class="cell" data-index="6"></div>
+                    <div class="cell" data-index="7"></div>
+                    <div class="cell" data-index="8"></div>
+                </div>
+                <div class="status">Player X's turn</div>
+                <button id="restartBtn">Restart Game</button>
+            </div>
+            <div class="scoreboard">
+                <h2>Scoreboard</h2>
+                <div id="playerXScore">Player X: 0</div>
+                <div id="playerOScore">Player O (AI): 0</div>
+                <button id="logoutBtn">Logout</button>
+            </div>
+            <div class="history-container">
+                <h2>Game History</h2>
+                <button id="clearHistoryBtn">Clear History</button>
+                <div>
+                    <h3>Multiplayer History</h3>
+                    <ul id="multiplayerHistoryList"></ul>
+                </div>
+                <div>
+                    <h3>AI Mode History</h3>
+                    <ul id="aiHistoryList"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>

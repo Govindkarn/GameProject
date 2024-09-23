@@ -1,0 +1,308 @@
+/* General Body Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Prevent body scroll */
+}
+
+/* Main Container Styles */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+/* Game Container Styles */
+.game-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-areas: "scoreboard game history";
+  gap: 20px;
+  background: linear-gradient(145deg, #ffffff, #e3f2fd);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 800px; /* Fixed width */
+  height: 600px; /* Fixed height */
+  position: relative;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Game Board Styles */
+.game-board {
+  background: linear-gradient(145deg, #ffffff, #e0f7fa); /* Changed to a soft aqua color */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: game;
+  overflow: hidden;
+  animation: scaleIn 0.5s ease-out;
+}
+
+/* Game Board Title Styles */
+.game-board h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #0072ff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  animation: slideInFromTop 1s ease-out;
+}
+
+/* Mode Selection Button Styles */
+.mode-selection button {
+  margin: 5px;
+  padding: 10px;
+  background: linear-gradient(145deg, #00796b, #004d40);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mode-selection button:hover {
+  background: linear-gradient(145deg, #004d40, #00796b);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Game Board Cells Styles */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cell {
+  background: linear-gradient(145deg, #9c9dec, #bbe1f8); /* Soft pink color for cells */
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cell:hover {
+  background: linear-gradient(145deg, #8fc3f4, #386bee); /* Darker pink on hover */
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Status Styles */
+.status {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #0072ff;
+}
+
+/* Restart Button Styles */
+button#restartBtn {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(145deg, #00796b, #004d40);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button#restartBtn:hover {
+  background: linear-gradient(145deg, #004d40, #00796b);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* History Container Styles */
+.history-container {
+  width: 100%; /* Flexible to fit the grid area */
+  background: linear-gradient(145deg, #ffffff, #e3f2fd);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  grid-area: history;
+  overflow-y: auto;
+  max-height: 100%; /* Ensure it doesn't grow outside its area */
+  animation: slideInFromRight 0.5s ease-out;
+}
+
+/* History Container Title Styles */
+.history-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #0072ff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* History List Styles */
+.history-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.history-container li {
+  background: linear-gradient(145deg, #f0f4f8, #e3f2fd);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+  animation: fadeIn 1s ease-out;
+}
+
+/* Clear History Button Styles */
+button#clearHistoryBtn {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(145deg, #00796b, #004d40);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button#clearHistoryBtn:hover {
+  background: linear-gradient(145deg, #004d40, #00796b);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Scoreboard Styles */
+.scoreboard {
+  width: 100%; /* Make it flexible */
+  background: linear-gradient(145deg, #ffffff, #e3f2fd);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  grid-area: scoreboard;
+  animation: slideInFromLeft 0.5s ease-out;
+}
+
+/* Scoreboard Title Styles */
+.scoreboard h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #0072ff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Logout Button Styles */
+button#logoutBtn {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(145deg, #00796b, #004d40);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button#logoutBtn:hover {
+  background: linear-gradient(145deg, #004d40, #00796b);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Utility Styles */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .game-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "game"
+      "scoreboard"
+      "history";
+  }
+
+  .game-board, .scoreboard, .history-container {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .game-board h1 {
+    font-size: 1.8rem;
+  }
+
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+}

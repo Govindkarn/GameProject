@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User - Tic Tac Toe</title>
+    <link rel="stylesheet" href="newstyle.css">
+</head>
+<body>
+    <div class="edit-user-container">
+        <h1>Edit User</h1>
+        <form th:action="@{/users/update/{id}(id=${user.id})}" method="post">
+            <label for="uname">Username:</label>
+            <input type="text" id="uname" name="uname" th:value="${user.uname}" required>
+            <label for="pwd">Password:</label>
+            <input type="text" id="pwd" name="pwd" th:value="${user.pwd}" required>
+            <button type="submit">Update</button>
+        </form>
+        <a href="users.html">Back to User Management</a>
+    </div>
+</body>
+</html>
